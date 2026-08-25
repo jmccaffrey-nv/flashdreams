@@ -24,7 +24,7 @@ class UserInputEvents:
 
     def __init__(self, events: list[UserInputEvent]) -> None:
         self._data = UserInputEventsData(
-            events=sorted(events, key=lambda event: event.get_timestamp()),
+            events=sorted(events, key=lambda event: event.timestamp),
         )
 
     def get_events(self) -> list[UserInputEvent]:

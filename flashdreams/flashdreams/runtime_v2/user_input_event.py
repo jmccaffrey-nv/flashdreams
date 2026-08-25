@@ -1,15 +1,13 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-"""User input events, each a timestamp plus the data for one input modality."""
+"""Concrete user input events for supported input modalities."""
 
 from dataclasses import dataclass
 from enum import Enum
 from typing import Literal
 
-from numpy import uint64
-
-from flashdreams.api_v2.user_input_event_data import UserInputEventData
+from flashdreams.api_v2.user_input_event import UserInputEvent
 
 
 class KeyboardInputState(Enum):
@@ -23,8 +21,8 @@ class KeyboardInputState(Enum):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class NumeralKeypadUserInputEventData(UserInputEventData):
-    """User input event data for numeral keypad."""
+class NumeralKeypadUserInputEventData(UserInputEvent):
+    """User input event for a numeral keypad."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -36,8 +34,8 @@ class NumeralKeypadUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class KeyboardUserInputEventData(UserInputEventData):
-    """User input event data for keyboard."""
+class KeyboardUserInputEventData(UserInputEvent):
+    """User input event for a keyboard."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -51,7 +49,7 @@ class KeyboardUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class CloseUserInputEventData(UserInputEventData):
+class CloseUserInputEventData(UserInputEvent):
     """The client asked to end the run, or went away.
 
     A window reports this for its X button, a quit shortcut, or a client that
@@ -65,7 +63,7 @@ class CloseUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class ResetUserInputEventData(UserInputEventData):
+class ResetUserInputEventData(UserInputEvent):
     """The client asked to start the run over.
 
     Each registered thread resets before its next ``step``, and its step index
@@ -79,8 +77,8 @@ class ResetUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class MouseUserInputEventData(UserInputEventData):
-    """User input event data for mouse."""
+class MouseUserInputEventData(UserInputEvent):
+    """User input event for a mouse."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -104,7 +102,7 @@ class MouseUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class FocusUserInputEventData(UserInputEventData):
+class FocusUserInputEventData(UserInputEvent):
     """Client viewport focus change."""
 
     @classmethod
@@ -120,8 +118,8 @@ class FocusUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class TouchUserInputEventData(UserInputEventData):
-    """User input event data for touch."""
+class TouchUserInputEventData(UserInputEvent):
+    """User input event for touch."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -130,8 +128,8 @@ class TouchUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class GamepadUserInputEventData(UserInputEventData):
-    """User input event data for gamepad."""
+class GamepadUserInputEventData(UserInputEvent):
+    """User input event for a gamepad."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -140,8 +138,8 @@ class GamepadUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class GameWheelUserInputEventData(UserInputEventData):
-    """User input event data for game wheel."""
+class GameWheelUserInputEventData(UserInputEvent):
+    """User input event for a game wheel."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -150,8 +148,8 @@ class GameWheelUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class XRControllerUserInputEventData(UserInputEventData):
-    """User input event data for XR controllers."""
+class XRControllerUserInputEventData(UserInputEvent):
+    """User input event for XR controllers."""
 
     @classmethod
     def get_type_name(cls) -> str:
@@ -160,29 +158,10 @@ class XRControllerUserInputEventData(UserInputEventData):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class UnknownUserInputEventData(UserInputEventData):
-    """User input event data for unknown."""
+class UnknownUserInputEventData(UserInputEvent):
+    """User input event for an unknown input modality."""
 
     @classmethod
     def get_type_name(cls) -> str:
         """Return the event type name."""
         return "unknown"
-
-
-@dataclass(frozen=True, slots=True)
-class UserInputEvent:
-    """User input event."""
-
-    timestamp: uint64
-    """Timestamp in microseconds since the start of the session."""
-
-    event_data: UserInputEventData
-    """Event data."""
-
-    def get_timestamp(self) -> uint64:
-        """Return the timestamp."""
-        return self.timestamp
-
-    def get_event_data(self) -> UserInputEventData:
-        """Return the event data structure with type & data."""
-        return self.event_data

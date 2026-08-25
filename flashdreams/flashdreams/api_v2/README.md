@@ -11,7 +11,7 @@ Protocols for the FlashDreams v2 API.
   `IModelLoop` and `IUILoop` define model and UI work.
 - `input_source.py` / `output_sink.py` / `client_window.py`: `IClientWindow`
   groups one client's input and output.
-- `user_input_event_data.py`: base class for input event data.
+- `user_input_event.py`: base class for timestamped input events.
 
 Running an application
 ----------------------
