@@ -21,7 +21,7 @@ class KeyboardInputState(Enum):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class NumeralKeypadUserInputEventData(UserInputEvent):
+class NumeralKeypadUserInputEvent(UserInputEvent):
     """User input event for a numeral keypad."""
 
     @classmethod
@@ -34,7 +34,7 @@ class NumeralKeypadUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class KeyboardUserInputEventData(UserInputEvent):
+class KeyboardUserInputEvent(UserInputEvent):
     """User input event for a keyboard."""
 
     @classmethod
@@ -49,7 +49,7 @@ class KeyboardUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class CloseUserInputEventData(UserInputEvent):
+class CloseUserInputEvent(UserInputEvent):
     """The client asked to end the run, or went away.
 
     A window reports this for its X button, a quit shortcut, or a client that
@@ -63,7 +63,7 @@ class CloseUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class ResetUserInputEventData(UserInputEvent):
+class ResetUserInputEvent(UserInputEvent):
     """The client asked to start the run over.
 
     Each registered thread resets before its next ``step``, and its step index
@@ -77,7 +77,7 @@ class ResetUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class MouseUserInputEventData(UserInputEvent):
+class MouseUserInputEvent(UserInputEvent):
     """User input event for a mouse."""
 
     @classmethod
@@ -102,7 +102,7 @@ class MouseUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class FocusUserInputEventData(UserInputEvent):
+class FocusUserInputEvent(UserInputEvent):
     """Client viewport focus change."""
 
     @classmethod
@@ -118,7 +118,7 @@ class FocusUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class TouchUserInputEventData(UserInputEvent):
+class TouchUserInputEvent(UserInputEvent):
     """User input event for touch."""
 
     @classmethod
@@ -128,7 +128,7 @@ class TouchUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class GamepadUserInputEventData(UserInputEvent):
+class GamepadUserInputEvent(UserInputEvent):
     """User input event for a gamepad."""
 
     @classmethod
@@ -138,7 +138,7 @@ class GamepadUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class GameWheelUserInputEventData(UserInputEvent):
+class GameWheelUserInputEvent(UserInputEvent):
     """User input event for a game wheel."""
 
     @classmethod
@@ -148,7 +148,7 @@ class GameWheelUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class XRControllerUserInputEventData(UserInputEvent):
+class XRControllerUserInputEvent(UserInputEvent):
     """User input event for XR controllers."""
 
     @classmethod
@@ -158,7 +158,7 @@ class XRControllerUserInputEventData(UserInputEvent):
 
 
 @dataclass(frozen=True, slots=True, eq=False)
-class UnknownUserInputEventData(UserInputEvent):
+class UnknownUserInputEvent(UserInputEvent):
     """User input event for an unknown input modality."""
 
     @classmethod

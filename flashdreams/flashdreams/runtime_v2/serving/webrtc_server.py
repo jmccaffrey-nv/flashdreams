@@ -26,12 +26,12 @@ from av import VideoFrame
 from flashdreams.runtime_v2.session_desc import SessionDesc
 from flashdreams.runtime_v2.step_result import StepResult
 from flashdreams.runtime_v2.user_input_event import (
-    CloseUserInputEventData,
-    FocusUserInputEventData,
+    CloseUserInputEvent,
+    FocusUserInputEvent,
     KeyboardInputState,
-    KeyboardUserInputEventData,
-    MouseUserInputEventData,
-    ResetUserInputEventData,
+    KeyboardUserInputEvent,
+    MouseUserInputEvent,
+    ResetUserInputEvent,
     UserInputEvent,
 )
 from flashdreams.runtime_v2.video_tensor import VideoTensorLayout
@@ -391,7 +391,7 @@ class WebRTCServer:
                 raise ValueError("Keyboard event requires a non-empty key.")
             if not isinstance(pressed, bool):
                 raise ValueError("Keyboard event requires a boolean pressed value.")
-            event = KeyboardUserInputEventData(
+            event = KeyboardUserInputEvent(
                 timestamp=timestamp_us,
                 key=key,
                 state=(
@@ -416,7 +416,7 @@ class WebRTCServer:
                 raise ValueError("Mouse button must be a non-negative integer.")
             if not isinstance(pressed, bool):
                 raise ValueError("Mouse pressed must be a boolean.")
-            event = MouseUserInputEventData(
+            event = MouseUserInputEvent(
                 timestamp=timestamp_us,
                 action=action,
                 x=x,
@@ -430,14 +430,14 @@ class WebRTCServer:
             focused = payload.get("focused")
             if not isinstance(focused, bool):
                 raise ValueError("Focus event requires a boolean focused value.")
-            event = FocusUserInputEventData(
+            event = FocusUserInputEvent(
                 timestamp=timestamp_us,
                 focused=focused,
             )
         elif event_type == "reset":
-            event = ResetUserInputEventData(timestamp=timestamp_us)
+            event = ResetUserInputEvent(timestamp=timestamp_us)
         elif event_type == "close":
-            event = CloseUserInputEventData(timestamp=timestamp_us)
+            event = CloseUserInputEvent(timestamp=timestamp_us)
         else:
             raise ValueError("Unsupported browser event type.")
         self._append_event(event)
@@ -459,7 +459,7 @@ class WebRTCServer:
         if not self._closed:
             timestamp_us = self._timestamp_us()
             if timestamp_us is not None:
-                self._append_event(CloseUserInputEventData(timestamp=timestamp_us))
+                self._append_event(CloseUserInputEvent(timestamp=timestamp_us))
 
     def _timestamp_us(self) -> np.uint64 | None:
         """Return the current session-relative event timestamp."""
