@@ -1,0 +1,66 @@
+{
+  "mode": "open-loop",
+  "commit": "22b3e8678b6eb8061893109548ccf9e5d134b53d",
+  "argv": [
+    "cosmos3_nano_sim_auto.impl.app",
+    "--mode",
+    "mp4",
+    "--output-path",
+    "/home/jmccaffrey/projects/artifacts/flashdreams-pr773-validation/open-loop/drive.mp4",
+    "--stats-path",
+    "/home/jmccaffrey/projects/artifacts/flashdreams-pr773-validation/open-loop/metrics.json",
+    "--timeout",
+    "unbound",
+    "--total-model-steps",
+    "5",
+    "--pixel-width",
+    "1280",
+    "--pixel-height",
+    "800",
+    "--backpressure-mode",
+    "block",
+    "--presentation-mode",
+    "on_demand",
+    "--",
+    "--sample",
+    "/home/jmccaffrey/.cache/flashdreams/cosmos3-nano-sim-auto/scenes/clipgt-residential-iter1500-e78981609da88c7e6d2c68bb30caacd71fdee21c27e35431f6a77538669568ed",
+    "--draw-map",
+    "/home/jmccaffrey/.cache/flashdreams/cosmos3-nano-sim-auto/scenes/clipgt-residential-iter1500-e78981609da88c7e6d2c68bb30caacd71fdee21c27e35431f6a77538669568ed",
+    "--checkpoint",
+    "/home/jmccaffrey/.cache/huggingface/hub/models--nvidia--Cosmos3-Nano-Sim-Auto/snapshots/c3fa1378e93710242501a6288d7c9e7c9084a580/model.safetensors.index.json",
+    "--views",
+    "1",
+    "--frames",
+    "49",
+    "--compile-denoise",
+    "off",
+    "--ui"
+  ],
+  "python": "/home/jmccaffrey/projects/cosmos3-sim-drag-race-2026-10-23/src/flashdreams-v0.2.0/.venv/bin/python",
+  "source_modules": {
+    "interactive_drive.app": "/home/jmccaffrey/projects/flashdreams-restore-drive-controls/apps/interactive_drive/interactive_drive/app.py",
+    "cosmos3_nano_sim_auto.apps.interactive_drive.ui": "/home/jmccaffrey/projects/flashdreams-restore-drive-controls/integrations_v2/cosmos3_nano_sim_auto/apps/interactive_drive/ui.py"
+  },
+  "inputs": [],
+  "model_commands": [],
+  "captures": [
+    {
+      "frame": 6,
+      "phase": "recorded",
+      "file": "0006-recorded.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": null
+    }
+  ],
+  "ui_states": [],
+  "completed": true,
+  "elapsed_seconds": 13.803034071810544,
+  "written_frames": 50,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "torch": "2.12.1+cu130",
+  "peak_allocated_bytes": 33334539264
+}

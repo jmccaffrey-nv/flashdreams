@@ -1,0 +1,206 @@
+{
+  "status": "passed",
+  "commit": "22b3e8678b6eb8061893109548ccf9e5d134b53d",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "closed_loop": {
+    "model_steps": 13,
+    "input_states": [
+      "idle",
+      "throttle",
+      "left-throttle",
+      "right-brake",
+      "wheel-throttle",
+      "released"
+    ],
+    "consumed_command_states": [
+      [
+        -1.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.6,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "captures": [
+      {
+        "frame": 6,
+        "phase": "idle",
+        "file": "0006-idle.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "source": "idle",
+          "wheel_angle": 0,
+          "block": 1
+        }
+      },
+      {
+        "frame": 13,
+        "phase": "throttle",
+        "file": "0013-throttle.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": 0.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "source": "keyboard",
+          "wheel_angle": 0,
+          "block": 2
+        }
+      },
+      {
+        "frame": 80,
+        "phase": "left-throttle",
+        "file": "0080-left-throttle.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": 1.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "source": "keyboard",
+          "wheel_angle": 90,
+          "block": 4
+        }
+      },
+      {
+        "frame": 145,
+        "phase": "right-brake",
+        "file": "0145-right-brake.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": -1.0,
+          "throttle": 0.0,
+          "brake": 1.0,
+          "source": "keyboard",
+          "wheel_angle": -90,
+          "block": 6
+        }
+      },
+      {
+        "frame": 207,
+        "phase": "wheel-throttle",
+        "file": "0207-wheel-throttle.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": 0.2,
+          "throttle": 0.6,
+          "brake": 0.0,
+          "source": "wheel/gamepad",
+          "wheel_angle": 36,
+          "block": 8
+        }
+      },
+      {
+        "frame": 269,
+        "phase": "released",
+        "file": "0269-released.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "source": "idle",
+          "wheel_angle": 0,
+          "block": 10
+        }
+      }
+    ],
+    "changed_rgb_values_in_control_regions": {
+      "wheel": 34793,
+      "brake": 23443,
+      "throttle": 19819
+    },
+    "elapsed_seconds": 19.822736805770546
+  },
+  "open_loop": {
+    "requested_generated_frames": 49,
+    "captures": [
+      {
+        "frame": 6,
+        "phase": "recorded",
+        "file": "0006-recorded.png",
+        "size": [
+          800,
+          1280,
+          3
+        ],
+        "ui_state": null
+      }
+    ],
+    "elapsed_seconds": 13.803034071810544,
+    "controls": "Recorded conditioning; vehicle controls intentionally inactive."
+  },
+  "video_decoding": {
+    "closed-loop": {
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "30/1",
+      "nb_frames": "381"
+    },
+    "open-loop": {
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "30/1",
+      "nb_frames": "50"
+    }
+  },
+  "visual_inspection": "Inspected raw 1280x800 GPU-rendered captures: right panel, left/right rotation, pressed pedals, wheel input, release, and inactive recorded-trajectory UI.",
+  "limitations": [
+    "One RGB view, residential scene; software-injected keyboard/wheel events, no physical controller.",
+    "Interactive validation uses the normal continuous presentation mode. An additional on-demand capture exposed the existing runtime behavior that drops UI input during ticks without a new model frame.",
+    "Both MP4 runs returned success and decoded completely, with an existing Bad file descriptor warning during client cleanup."
+  ],
+  "sha256": {
+    "closed-loop/0006-idle.png": "76f820d0bd17c0b6510fedf9548a8f85648f31268ab504d185aceaaf1e14d660",
+    "closed-loop/0013-throttle.png": "429dfe3d0c228462a62802a6fafdd3da35cf1e68cf73ff482889bd5db2eabb71",
+    "closed-loop/0080-left-throttle.png": "55f28f1ca236b245f13c813af48675d5d107ccf66fb2cbfcaed1fffd584f2f67",
+    "closed-loop/0145-right-brake.png": "bdefa2e811119a7e75caf20a15157f8c975aef7606f08c4d55969b844016706d",
+    "closed-loop/0207-wheel-throttle.png": "93ab524af57e87fbb1c71538463064570708ab06419f6a0f760f017d55ff3a90",
+    "closed-loop/0269-released.png": "da58804b7988bfa1eb3a9f94152b0b886bb0e3706a0c93163c91ff56294c5a59",
+    "open-loop/0006-recorded.png": "1783659ed099b954e57d7f4ceefe6c8c49d041948c5d924b0d1c86d564764080"
+  }
+}

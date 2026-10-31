@@ -1,0 +1,554 @@
+{
+  "mode": "closed-loop",
+  "commit": "22b3e8678b6eb8061893109548ccf9e5d134b53d",
+  "argv": [
+    "cosmos3_nano_sim_auto.apps.interactive_drive.adapter",
+    "--mode",
+    "mp4",
+    "--output-path",
+    "/home/jmccaffrey/projects/artifacts/flashdreams-pr773-validation/closed-loop/drive.mp4",
+    "--stats-path",
+    "/home/jmccaffrey/projects/artifacts/flashdreams-pr773-validation/closed-loop/metrics.json",
+    "--timeout",
+    "unbound",
+    "--total-model-steps",
+    "13",
+    "--pixel-width",
+    "1280",
+    "--pixel-height",
+    "800",
+    "--backpressure-mode",
+    "block",
+    "--presentation-mode",
+    "continuous",
+    "--",
+    "--scene",
+    "/home/jmccaffrey/.cache/flashdreams/cosmos3-nano-sim-auto/scenes/clipgt-residential-iter1500-e78981609da88c7e6d2c68bb30caacd71fdee21c27e35431f6a77538669568ed",
+    "--checkpoint",
+    "/home/jmccaffrey/.cache/huggingface/hub/models--nvidia--Cosmos3-Nano-Sim-Auto/snapshots/c3fa1378e93710242501a6288d7c9e7c9084a580/model.safetensors.index.json",
+    "--views",
+    "1",
+    "--compile-denoise",
+    "off",
+    "--total-blocks",
+    "13"
+  ],
+  "python": "/home/jmccaffrey/projects/cosmos3-sim-drag-race-2026-10-23/src/flashdreams-v0.2.0/.venv/bin/python",
+  "source_modules": {
+    "interactive_drive.app": "/home/jmccaffrey/projects/flashdreams-restore-drive-controls/apps/interactive_drive/interactive_drive/app.py",
+    "cosmos3_nano_sim_auto.apps.interactive_drive.ui": "/home/jmccaffrey/projects/flashdreams-restore-drive-controls/integrations_v2/cosmos3_nano_sim_auto/apps/interactive_drive/ui.py"
+  },
+  "inputs": [
+    {
+      "frame": 0,
+      "phase": "idle",
+      "keys": []
+    },
+    {
+      "frame": 13,
+      "phase": "throttle",
+      "keys": [
+        "w"
+      ]
+    },
+    {
+      "frame": 80,
+      "phase": "left-throttle",
+      "keys": [
+        "a",
+        "w"
+      ]
+    },
+    {
+      "frame": 145,
+      "phase": "right-brake",
+      "keys": [
+        " ",
+        "d"
+      ]
+    },
+    {
+      "frame": 207,
+      "phase": "wheel-throttle",
+      "keys": []
+    },
+    {
+      "frame": 269,
+      "phase": "released",
+      "keys": []
+    }
+  ],
+  "model_commands": [
+    {
+      "step": 0,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 7.7282478014628095,
+        "y_m": 0.03552305026290317,
+        "yaw_rad": 0.005444731743067194,
+        "speed_mps": 13.925607569235776
+      }
+    },
+    {
+      "step": 1,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 13.237742392222088,
+        "y_m": 0.0655210691038519,
+        "yaw_rad": 0.005444731743067194,
+        "speed_mps": 13.645607569235775
+      }
+    },
+    {
+      "step": 2,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 18.635238647460945,
+        "y_m": 0.09490928275821107,
+        "yaw_rad": 0.005444731743067194,
+        "speed_mps": 13.365607569235774
+      }
+    },
+    {
+      "step": 3,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 24.28473116556804,
+        "y_m": 0.125669565036272,
+        "yaw_rad": 0.005444731743067194,
+        "speed_mps": 14.76560756923578
+      }
+    },
+    {
+      "step": 4,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 30.494215361277266,
+        "y_m": 0.1594788826846828,
+        "yaw_rad": 0.005444731743067194,
+        "speed_mps": 16.165607569235785
+      }
+    },
+    {
+      "step": 5,
+      "consumed_commands": [
+        {
+          "steer": 1.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 1.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 37.25596602757771,
+        "y_m": 0.4390511068049818,
+        "yaw_rad": 0.08936445214748209,
+        "speed_mps": 17.56560756923579
+      }
+    },
+    {
+      "step": 6,
+      "consumed_commands": [
+        {
+          "steer": 1.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 1.0,
+          "throttle": 1.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 44.51586179733276,
+        "y_m": 1.446183168127512,
+        "yaw_rad": 0.22477195325880195,
+        "speed_mps": 18.965607569235797
+      }
+    },
+    {
+      "step": 7,
+      "consumed_commands": [
+        {
+          "steer": -1.0,
+          "throttle": 0.0,
+          "brake": 1.0,
+          "reverse": false
+        },
+        {
+          "steer": -1.0,
+          "throttle": 0.0,
+          "brake": 1.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 50.875581550598135,
+        "y_m": 3.02333052479662,
+        "yaw_rad": 0.37162225195231585,
+        "speed_mps": 14.165607569235805
+      }
+    },
+    {
+      "step": 8,
+      "consumed_commands": [
+        {
+          "steer": -1.0,
+          "throttle": 0.0,
+          "brake": 1.0,
+          "reverse": false
+        },
+        {
+          "steer": -1.0,
+          "throttle": 0.0,
+          "brake": 1.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 55.15468788146971,
+        "y_m": 4.787325949703034,
+        "yaw_rad": 0.5091440166729069,
+        "speed_mps": 9.3656075692358
+      }
+    },
+    {
+      "step": 9,
+      "consumed_commands": [
+        {
+          "steer": 0.2,
+          "throttle": 0.6,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.2,
+          "throttle": 0.6,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 58.433633740742984,
+        "y_m": 6.800745911632355,
+        "yaw_rad": 0.6104862829566509,
+        "speed_mps": 9.845607569235792
+      }
+    },
+    {
+      "step": 10,
+      "consumed_commands": [
+        {
+          "steer": 0.2,
+          "throttle": 0.6,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.2,
+          "throttle": 0.6,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 61.60705747604368,
+        "y_m": 9.301384317114328,
+        "yaw_rad": 0.722860690855432,
+        "speed_mps": 10.325607569235784
+      }
+    },
+    {
+      "step": 11,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 64.61466973622638,
+        "y_m": 12.043659777675446,
+        "yaw_rad": 0.7739995954027427,
+        "speed_mps": 10.045607569235782
+      }
+    },
+    {
+      "step": 12,
+      "consumed_commands": [
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        },
+        {
+          "steer": 0.0,
+          "throttle": 0.0,
+          "brake": 0.0,
+          "reverse": false
+        }
+      ],
+      "vehicle": {
+        "x_m": 67.45423310597735,
+        "y_m": 14.800468376511708,
+        "yaw_rad": 0.7799330448922247,
+        "speed_mps": 9.765607569235781
+      }
+    }
+  ],
+  "captures": [
+    {
+      "frame": 6,
+      "phase": "idle",
+      "file": "0006-idle.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": 0.0,
+        "throttle": 0.0,
+        "brake": 0.0,
+        "source": "idle",
+        "wheel_angle": 0,
+        "block": 1
+      }
+    },
+    {
+      "frame": 13,
+      "phase": "throttle",
+      "file": "0013-throttle.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": 0.0,
+        "throttle": 1.0,
+        "brake": 0.0,
+        "source": "keyboard",
+        "wheel_angle": 0,
+        "block": 2
+      }
+    },
+    {
+      "frame": 80,
+      "phase": "left-throttle",
+      "file": "0080-left-throttle.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": 1.0,
+        "throttle": 1.0,
+        "brake": 0.0,
+        "source": "keyboard",
+        "wheel_angle": 90,
+        "block": 4
+      }
+    },
+    {
+      "frame": 145,
+      "phase": "right-brake",
+      "file": "0145-right-brake.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": -1.0,
+        "throttle": 0.0,
+        "brake": 1.0,
+        "source": "keyboard",
+        "wheel_angle": -90,
+        "block": 6
+      }
+    },
+    {
+      "frame": 207,
+      "phase": "wheel-throttle",
+      "file": "0207-wheel-throttle.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": 0.2,
+        "throttle": 0.6,
+        "brake": 0.0,
+        "source": "wheel/gamepad",
+        "wheel_angle": 36,
+        "block": 8
+      }
+    },
+    {
+      "frame": 269,
+      "phase": "released",
+      "file": "0269-released.png",
+      "size": [
+        800,
+        1280,
+        3
+      ],
+      "ui_state": {
+        "steer": 0.0,
+        "throttle": 0.0,
+        "brake": 0.0,
+        "source": "idle",
+        "wheel_angle": 0,
+        "block": 10
+      }
+    }
+  ],
+  "ui_states": [
+    {
+      "steer": 0.0,
+      "throttle": 0.0,
+      "brake": 0.0,
+      "source": "idle",
+      "wheel_angle": 0,
+      "block": null,
+      "frame": 0
+    },
+    {
+      "steer": 0.0,
+      "throttle": 1.0,
+      "brake": 0.0,
+      "source": "keyboard",
+      "wheel_angle": 0,
+      "block": 2,
+      "frame": 13
+    },
+    {
+      "steer": 1.0,
+      "throttle": 1.0,
+      "brake": 0.0,
+      "source": "keyboard",
+      "wheel_angle": 90,
+      "block": 4,
+      "frame": 80
+    },
+    {
+      "steer": -1.0,
+      "throttle": 0.0,
+      "brake": 1.0,
+      "source": "keyboard",
+      "wheel_angle": -90,
+      "block": 6,
+      "frame": 145
+    },
+    {
+      "steer": 0.2,
+      "throttle": 0.6,
+      "brake": 0.0,
+      "source": "wheel/gamepad",
+      "wheel_angle": 36,
+      "block": 8,
+      "frame": 207
+    },
+    {
+      "steer": 0.0,
+      "throttle": 0.0,
+      "brake": 0.0,
+      "source": "idle",
+      "wheel_angle": 0,
+      "block": 10,
+      "frame": 269
+    }
+  ],
+  "completed": true,
+  "elapsed_seconds": 19.822736805770546,
+  "written_frames": 381,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "torch": "2.12.1+cu130",
+  "peak_allocated_bytes": 33246219264
+}
